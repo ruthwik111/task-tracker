@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App Title</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles.css">
+    <script>
+        let isSignup = true;
+      
+        function switchForm() {
+          const form = document.getElementById('auth-form');
+          if (isSignup) {
+            form.innerHTML = `
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit">Login</button>
+              <button type="button" class="switch-button" onclick="switchForm()">Switch to Signup</button>
+            `;
+            isSignup = false;
+          } else {
+            form.innerHTML = `
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Country" />
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit">Signup</button>
+              <button type="button" class="switch-button" onclick="switchForm()">Switch to Login</button>
+            `;
+            isSignup = true;
+          }
+        }
+      </script>
+      
+</head>
+<body>
+    <div id="root"></div> <!-- This is where your React app will be rendered -->
+</body>
+</html>
